@@ -1,0 +1,23 @@
+<table class="table table-hover">
+  <thead>
+    <tr>
+
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Priority</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of Todo; let i = index;">
+        <td>{{todo.task_name}}</td>
+        <td>{{todo.task_description}}</td>
+        <td>{{todo.priority}}</td>
+        <td>{{todo.status}}</td>
+        <td class="text-center">
+          <button class="btn btn-sm btn-primary mr-1" routerLink="/update-task/{{todo._id}}">Update </button>
+          <button class="btn btn-sm btn-danger" (click)="delete(todo._id, i)"> Delete</button>
+          </td>
+    </tr>
+  </tbody>
+</table>
